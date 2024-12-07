@@ -11,6 +11,8 @@ module GestionCinema {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires java.sql;
+    requires java.desktop;
+    requires mysql.connector.j;
 
 
     // Opening packages to JavaFX for reflection-based access

@@ -1,13 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.MainController">
-    <top>
-        <Label fx:id="welcomeLabel" text="Bienvenue !" style="-fx-font-size: 20;" alignment="CENTER" />
-    </top>
-    <center>
-        <Button fx:id="actionButton" text="Cliquez-moi" onMouseClicked="#handleButtonClick" />
-    </center>
-</BorderPane>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="449.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+   <children>
+      <AnchorPane fx:id="signin_form" layoutY="110.0" prefHeight="449.0" prefWidth="647.0" style="-fx-background-color: lie;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="signin_close" layoutX="605.0" layoutY="11.0" mnemonicParsing="false" onAction="#SignIn_close" prefHeight="24.0" prefWidth="54.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+               <graphic>
+                  <FontAwesomeIcon glyphName="CLOSE" />
+               </graphic>
+            </Button>
+            <Button fx:id="signin_minimise" layoutX="545.0" layoutY="2.0" mnemonicParsing="false" onAction="#SignIn_Minimise" prefHeight="24.0" prefWidth="38.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="2.0">
+               <graphic>
+                  <FontAwesomeIcon glyphName="MINUS" />
+               </graphic>
+            </Button>
+            <FontAwesomeIcon glyphName="USER" layoutX="289.0" layoutY="126.0" size="8em" wrappingWidth="85.60005187988281" />
+            <Label layoutX="282.0" layoutY="141.0" text="Sign In">
+               <font>
+                  <Font name="Berlin Sans FB" size="30.0" />
+               </font>
+            </Label>
+            <TextField fx:id="signin_username" layoutX="249.0" layoutY="225.0" promptText="Username" />
+            <PasswordField fx:id="signin_password" layoutX="249.0" layoutY="262.0" promptText="Password" />
+            <Button fx:id="signin_loginbtn" layoutX="282.0" layoutY="305.0" mnemonicParsing="false" onAction="#signin" prefHeight="50.0" prefWidth="82.0" text="Login" />
+            <Hyperlink fx:id="signin_createaccount" layoutX="263.0" layoutY="394.0" onAction="#switchForm" text="Create new account ?" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="signup_form" prefHeight="449.0" prefWidth="647.0" style="-fx-background-color: lie;" visible="false">
+         <children>
+            <Button fx:id="signup_close" layoutX="605.0" layoutY="11.0" mnemonicParsing="false" onAction="#SignUp_close" prefHeight="24.0" prefWidth="54.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+               <graphic>
+                  <FontAwesomeIcon glyphName="CLOSE" />
+               </graphic>
+            </Button>
+            <Button fx:id="signup_minimise" layoutX="545.0" layoutY="2.0" mnemonicParsing="false" onAction="#SignUp_Minimise" prefHeight="24.0" prefWidth="38.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="2.0">
+               <graphic>
+                  <FontAwesomeIcon glyphName="MINUS" />
+               </graphic>
+            </Button>
+            <FontAwesomeIcon glyphName="USER_PLUS" layoutX="289.0" layoutY="126.0" size="8em" wrappingWidth="85.60005187988281" />
+            <Label layoutX="282.0" layoutY="141.0" text="Sign Up">
+               <font>
+                  <Font name="Berlin Sans FB" size="30.0" />
+               </font>
+            </Label>
+            <TextField fx:id="signup_username" layoutX="249.0" layoutY="225.0" promptText="Username" />
+            <PasswordField fx:id="signup_password" layoutX="249.0" layoutY="262.0" promptText="Password" />
+            <Button fx:id="signup_btn" layoutX="282.0" layoutY="305.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="82.0" text="Sign up" />
+            <Hyperlink fx:id="signup_alreadyhaveaccount" layoutX="250.0" layoutY="392.0" onAction="#switchForm" text="Already have an account ?" />
+            <TextField fx:id="signup_email" layoutX="249.0" layoutY="191.0" promptText="Email" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

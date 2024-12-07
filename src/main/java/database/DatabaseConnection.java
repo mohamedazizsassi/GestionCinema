@@ -19,10 +19,13 @@ public class DatabaseConnection {
     public static Connection getConnection() throws SQLException {
         if (connection == null || connection.isClosed()) {
             try {
+                Class.forName("com.mysql.jdbc.Driver");
                 connection = DriverManager.getConnection(URL, USER, PASSWORD);
             } catch (SQLException e) {
                 System.out.println("Error connecting to the database: " + e.getMessage());
                 throw e;
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
             }
         }
         return connection;
